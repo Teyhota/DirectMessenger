@@ -1,0 +1,11 @@
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\bin\Debug\DirectMessenger.dll
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\bin\Debug\DirectMessenger.pdb
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\bin\Debug\Assembly-CSharp.dll
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\bin\Debug\Rocket.API.dll
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\bin\Debug\Rocket.Core.dll
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\bin\Debug\Rocket.Unturned.dll
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\bin\Debug\UnityEngine.dll
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\obj\Debug\DirectMessenger.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\obj\Debug\DirectMessenger.dll
+C:\Users\Student\Documents\Visual Studio 2015\Projects\DirectMessenger\DirectMessenger\obj\Debug\DirectMessenger.pdb
