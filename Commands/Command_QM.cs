@@ -14,6 +14,15 @@ using Rocket.Unturned.Chat;
 using SDG.Unturned;
 using UnityEngine;
 
+//     THIS
+//        COMMAND
+//           IS
+//             OBSOLETE!!
+//                   ...
+//                      USE
+//                        "/dm set"
+//                              INSTEAD!!
+
 namespace Command
 {
     public class QMCommand : IRocketCommand
@@ -30,59 +39,48 @@ namespace Command
             UnturnedPlayer cPlayer = (UnturnedPlayer)caller;
             UnturnedPlayer target;
 
-            if (command.Length < 1)
+            //command is exactly equal to 2 characters "qm"
+            if (command.Length == 2)
             {
-
-            }
-            else if (command.Length == 1)
-            {
-                if (command[0].ToString().ToLower() == "set")
-                {
-                    Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, "You must specify a player's name!", Color.red);
-                }
-                if (command[0].ToString().ToLower() != "set")
-                {
-                    //send a message to a set recipient, command[0] is message
-                    string messageText = command[0].ToString().ToLower();
-                    if (PM.Plugin.Instance.setPlayers.ContainsKey(cPlayer.CSteamID))
-                    {
-                        Steamworks.CSteamID setPlayerSID = PM.Plugin.Instance.setPlayers[cPlayer.CSteamID];
-                        UnturnedPlayer setPlayer = UnturnedPlayer.FromCSteamID(setPlayerSID);
-
-                        Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, "TO: " + setPlayer.CharacterName + " >> " + messageText, Color.cyan);
-                        Rocket.Unturned.Chat.UnturnedChat.Say(setPlayer, "FROM: " + cPlayer.CharacterName + " >> " + messageText, Color.clear);
-                        Rocket.Unturned.Chat.UnturnedChat.Say(setPlayer, "Reply with /r <message>", Color.gray);
-                        PM.Plugin.Instance.lastReceived[setPlayerSID] = cPlayer.CSteamID;
-                    }
-                    else
-                    {
-                        Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, "You don't have a player set!", Color.red);
-                    }
-                }
-            }
-            else if (command.Length == 2)
-            {
-                Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, "Use /qm set <player>, then use /qm <message>", Color.gray);
                 target = UnturnedPlayer.FromName(command[1].ToString());
-
                 if (command[0].ToString().ToLower() == "set" && target != null)
                 {
                     //set recipient
-                    if (PM.Plugin.Instance.setPlayers.ContainsKey(cPlayer.CSteamID))
+                    if (DM.Plugin.Instance.setPlayers.ContainsKey(cPlayer.CSteamID))
                     {
-                        PM.Plugin.Instance.setPlayers[cPlayer.CSteamID] = target.CSteamID;
+                        DM.Plugin.Instance.setPlayers[cPlayer.CSteamID] = target.CSteamID;
                     }
-                    else if (!PM.Plugin.Instance.setPlayers.ContainsKey(cPlayer.CSteamID))
+                    else if (!DM.Plugin.Instance.setPlayers.ContainsKey(cPlayer.CSteamID))
                     {
-                        PM.Plugin.Instance.setPlayers.Add(cPlayer.CSteamID, target.CSteamID);
+                        DM.Plugin.Instance.setPlayers.Add(cPlayer.CSteamID, target.CSteamID);
                     }
-                    Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, target.CharacterName + " has been set!", Color.gray);
+                    Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, target.CharacterName + " has been set for quick DMs!", Color.grey);
                 }
                 else if (command[0].ToString().ToLower() == "set" && target == null)
                 {
-                    Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, "Cannot find player!", Color.red);
+                    Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, "Player does not exist or is offline!", Color.red);
+                }
+                else if (command[0].ToString().ToLower() != "set")
+                {
+                    target = UnturnedPlayer.FromName(command[0].ToString());
+                    if (target != null)
+                    {
+                        //send single message to unset recipient, command[1] is message
+                        string messageText = command[1].ToString();
+
+                        Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, "TO: " + target.CharacterName + " >> " + messageText, Color.cyan);
+                        Rocket.Unturned.Chat.UnturnedChat.Say(target, "FROM: " + cPlayer.CharacterName + " >> " + messageText, Color.clear);
+                        Rocket.Unturned.Chat.UnturnedChat.Say(target, "Reply with /r <message>", Color.gray);
+                        DM.Plugin.Instance.lastReceived[target.CSteamID] = cPlayer.CSteamID;
+                    }
+                    else if (target == null)
+                    {
+                        Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, "Player does not exist or is offline!", Color.yellow);
+                    }
                 }
             }
+
+
             else if (command.Length > 2)
             {
                 target = UnturnedPlayer.FromName(command[0].ToString());
@@ -94,9 +92,9 @@ namespace Command
                     {
                         messageText = messageText + command[i].ToString() + " ";
                     }
-                    if (PM.Plugin.Instance.setPlayers.ContainsKey(cPlayer.CSteamID))
+                    if (DM.Plugin.Instance.setPlayers.ContainsKey(cPlayer.CSteamID))
                     {
-                        Steamworks.CSteamID setPlayerSID = PM.Plugin.Instance.setPlayers[cPlayer.CSteamID];
+                        Steamworks.CSteamID setPlayerSID = DM.Plugin.Instance.setPlayers[cPlayer.CSteamID];
 
                         UnturnedPlayer setPlayer = UnturnedPlayer.FromCSteamID(setPlayerSID);
 
@@ -110,6 +108,14 @@ namespace Command
                     }
                 }
             }
+            //if cmd is less than OR equal to 2 characters
+            else if (cLength <= 2)
+            {
+
+                //displays this msg...
+                Rocket.Unturned.Chat.UnturnedChat.Say(cPlayer, "Use /qm set <player>, then use /qm <message>", Color.gray);
+            }
+            
         }
         public bool AllowFromConsole
         {

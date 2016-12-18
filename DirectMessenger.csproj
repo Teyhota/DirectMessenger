@@ -58,7 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\Command_Reply.cs" />
+    <Compile Include="Commands\Command_R.cs" />
     <Compile Include="Commands\Command_QM.cs" />
     <Compile Include="Commands\Command_DM.cs" />
     <Compile Include="DirectMessengerConfig.cs" />

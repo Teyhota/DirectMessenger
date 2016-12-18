@@ -26,10 +26,10 @@ public class DirectMessengerConfig : IRocketPluginConfiguration
 {
     public static DirectMessengerConfig Instance;
 
-    public bool Enabled;
+    //public bool Enabled;
 
     public void LoadDefaults()
     {
-        Enabled = true;
+        
     }
 }

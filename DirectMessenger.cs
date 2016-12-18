@@ -22,7 +22,7 @@ using SDG;
 using SDG.Unturned;
 using UnityEngine;
 
-namespace PM
+namespace DM
 {
 	public class Plugin : RocketPlugin<DirectMessengerConfig>
 	{
@@ -37,15 +37,15 @@ namespace PM
             Instance = this;
             Rocket.Core.Logging.Logger.Log("Loading plugin...", ConsoleColor.Cyan);
             Rocket.Core.Logging.Logger.LogWarning("Plugin by: Teyhota");
-            Rocket.Core.Logging.Logger.LogWarning("Plugin Version: 1.0.0.0");
-            Rocket.Core.Logging.Logger.LogWarning("Recommended Unturned Version: 3.17.9.1");
+            Rocket.Core.Logging.Logger.LogWarning("Plugin Version: 1.0.0.7 (Beta)");
+            Rocket.Core.Logging.Logger.LogWarning("For Unturned Version: 3.17.10.0");
             Rocket.Core.Logging.Logger.Log("...DirectMessenger has been loaded!", ConsoleColor.Cyan);
             Rocket.Core.Logging.Logger.LogWarning("Use /dm <player> <message> to send a DM to a player!");
-            Rocket.Core.Logging.Logger.LogWarning("Use /qm set <player> to set a player as a QM!");
-            Rocket.Core.Logging.Logger.LogWarning("Use /qm <message> to send a QM to the set player!");
+            Rocket.Core.Logging.Logger.LogWarning("Use /dm set <player> to set a player as a quick DM recipient!");
+            Rocket.Core.Logging.Logger.LogWarning("Use /dm <message> to send a quick DM to the set recipient!");
             Rocket.Core.Logging.Logger.LogWarning("Use /r <message> to reply to you most recent DM!");
-            Rocket.Core.Logging.Logger.Log("Got errors? Please report them on my website!", ConsoleColor.Red);
-            Rocket.Core.Logging.Logger.Log("Got suggestions? Let me know on my website!", ConsoleColor.Magenta);
+            Rocket.Core.Logging.Logger.Log("Any errors? Please report them on my website!", ConsoleColor.Red);
+            Rocket.Core.Logging.Logger.Log("Any suggestions? Let me know on my website!", ConsoleColor.Magenta);
             Rocket.Core.Logging.Logger.LogWarning("My Website >> Rocket.TeyhotasDedicated.tk");
             U.Events.OnPlayerConnected += Events_OnPlayerConnected;
 			U.Events.OnPlayerDisconnected += Events_OnPlayerDisconnected;
