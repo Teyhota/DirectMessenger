@@ -58,13 +58,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\Command_R.cs" />
-    <Compile Include="Commands\Command_QM.cs" />
-    <Compile Include="Commands\Command_DM.cs" />
     <Compile Include="DirectMessengerConfig.cs" />
     <Compile Include="DirectMessenger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

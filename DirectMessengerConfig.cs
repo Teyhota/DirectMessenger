@@ -1,35 +1,15 @@
-﻿using System;
-using System.Xml;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Reflection;
-using System.ComponentModel;
-using Rocket.Core;
-using Rocket.Core.Logging;
-using Rocket.Unturned;
-using Rocket.Unturned.Chat;
-using Rocket.Unturned.Player;
-using Rocket.Unturned.Commands;
-using Rocket.Unturned.Enumerations;
-using Rocket.Unturned.Events;
-using Rocket.API;
-using Rocket.API.Collections;
-using Rocket.Core.Plugins;
-using Rocket.Unturned.Plugins;
-using SDG;
-using SDG.Unturned;
-using UnityEngine;
+﻿using Rocket.API;
 
-public class DirectMessengerConfig : IRocketPluginConfiguration
+namespace Teyhota.DirectMessenger
 {
-    public static DirectMessengerConfig Instance;
-
-    //public bool Enabled;
-
-    public void LoadDefaults()
+    // This will create a AssemblyName.configuration.xml file in the plugins\AssemblyName folder that people can easily edit
+    public class DirectMessengerConfig : IRocketPluginConfiguration
     {
-        
+        //public string message = "Hello World"; // Set them here and in LoadDefaults incase of changes to your Config 
+
+        public void LoadDefaults()
+        {
+            //message = "Hello World";
+        }
     }
 }
