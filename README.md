@@ -55,8 +55,8 @@ Get support for this plugin on the site...
 
 <em>www.TRP4Unturned.tk</em>
 
-<strong>
-<span style="text-decoration: underline;">Future Updates:</span></strong>
+<br>
+<strong><span style="text-decoration: underline;">Future Updates:</span></strong>
 <ul>
  	<li>Add /block &amp; /unblock commands to block &amp; unblock players from sending DM's</li>
  	<li>Add /qm command to quickly DM a set recipient</li>
