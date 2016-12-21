@@ -55,8 +55,6 @@ Get support for this plugin on the site...
 
 <em>www.TRP4Unturned.tk</em>
 
-<strong>**Please don't ask for support in the comments! I won't receive them as easily. Instead, go to my site!**</strong>
-
 <strong>
 <span style="text-decoration: underline;">Future Updates:</span></strong>
 <ul>
