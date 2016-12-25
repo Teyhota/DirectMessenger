@@ -30,10 +30,10 @@ namespace Teyhota.DirectMessenger
         {
             Rocket.Core.Logging.Logger.Log("Loading plugin...", ConsoleColor.DarkGreen);
             Rocket.Core.Logging.Logger.LogWarning("Plugin by: Teyhota");
-            Rocket.Core.Logging.Logger.LogWarning("Plugin Version: 1.1.0.0 beta");
-            Rocket.Core.Logging.Logger.LogWarning("For Unturned Version: 3.17.10.1");
+            Rocket.Core.Logging.Logger.LogWarning("Plugin Version: 1.1.0.1 beta");
+            Rocket.Core.Logging.Logger.LogWarning("For Unturned Version: 3.17.11.0");
             Rocket.Core.Logging.Logger.Log("...DirectMessenger has been loaded!", ConsoleColor.DarkGreen);
-            Rocket.Core.Logging.Logger.Log("Go to TRP4Unturned.tk for support!", ConsoleColor.DarkRed);
+            Rocket.Core.Logging.Logger.Log("Go to TRPD.4Unturned.tk for support!", ConsoleColor.DarkRed);
             PlayerList = new Dictionary<ulong, MessageTargets>();
         }
         protected override void Unload()
